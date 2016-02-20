@@ -9,7 +9,7 @@ module OmniAuth
 
       option :client_options, {
         site: 'https://api.twitch.tv',
-        authorize_url: "/kraken/oauth2/authorize",
+        authorize_url: "/kraken/oauth2/authorize?response_type=code",
         token_url: '/kraken/oauth2/token'
       }
 
