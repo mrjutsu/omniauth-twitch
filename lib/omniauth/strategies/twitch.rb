@@ -45,11 +45,20 @@ module OmniAuth
 
       def build_access_token
         super.tap do |token|
+          puts "TOKEN"
+          puts token.inspect
+          puts "TOKEN"
           token.options.merge!(access_token_options)
         end
       end
 
       def access_token_options
+        puts "OPTIONS"
+        puts options.inspect
+        puts "OPTIONS"
+        puts "ACCESS TOKEN OPTIONS"
+        puts options.access_token_options.inspect
+        puts "ACCESS TOKEN OPTIONS"
         options.access_token_options.inject({}) { |h,(k,v)| h[k.to_sym] = v; h }
       end
 
